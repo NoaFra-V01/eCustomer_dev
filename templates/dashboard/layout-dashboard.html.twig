@@ -1,0 +1,28 @@
+{# templates/dashboard/layout-dashboard.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Dashboard Intranet{% endblock %}
+
+{# On définit le fil d'ariane #}
+{% block breadcrumbs %}
+    {{ parent() }}
+    <li class="breadcrumb-item active" style="margin-left: 10px; color: #fff;">Vue Dashboard</li>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h2><i class="mdi mdi-view-dashboard"></i> Tableau de bord principal</h2>
+                    <p class="lead">
+                        Si vous voyez ce message, c'est que le fichier 
+                        <code>templates/dashboard/layout-dashboard.html.twig</code> 
+                        est bien détecté et qu'il hérite correctement de votre base !
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

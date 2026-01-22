@@ -1,0 +1,307 @@
+{# Menu principal du haut #}
+<ul class="navbar-nav navbar-nav-right ml-auto">
+    {# Icône Dashboard #}
+    <li class="nav-item">
+        <a class="nav-link" href="{{ path('homepage') }}" title="Dashboard">
+            <i class="mdi mdi-view-dashboard"></i>
+        </a>
+    </li>
+
+    {# Icône Clients #}
+    <li class="nav-item dropdown">
+        <a class="nav-link" href="#" data-toggle="dropdown" title="Clients">
+            <i class="mdi mdi-account-multiple"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Liste clients</a>
+            <a class="dropdown-item" href="#">Nouveau client</a>
+        </div>
+    </li>
+
+    {# Icône Qualité #}
+    <li class="nav-item dropdown">
+        <a class="nav-link" href="#" data-toggle="dropdown" title="Qualité">
+            <i class="mdi mdi-star-circle"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Non-conformités</a>
+            <a class="dropdown-item" href="#">Réclamations</a>
+        </div>
+    </li>
+
+    {# Icône Production #}
+    <li class="nav-item dropdown">
+        <a class="nav-link" href="#" data-toggle="dropdown" title="Production">
+            <i class="mdi mdi-factory"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Ordres de fabrication</a>
+            <a class="dropdown-item" href="#">Planning</a>
+        </div>
+    </li>
+
+    {# Icône Commercial #}
+    <li class="nav-item dropdown">
+        <a class="nav-link" href="#" data-toggle="dropdown" title="Commercial">
+            <i class="mdi mdi-briefcase"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Offres</a>
+            <a class="dropdown-item" href="#">Commandes</a>
+        </div>
+    </li>
+
+    {# Icône Achats #}
+    <li class="nav-item dropdown">
+        <a class="nav-link" href="#" data-toggle="dropdown" title="Achats">
+            <i class="mdi mdi-cart"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Demandes d'achat</a>
+            <a class="dropdown-item" href="#">Fournisseurs</a>
+        </div>
+    </li>
+
+    {# Icône Outils #}
+    <li class="nav-item dropdown">
+        <a class="nav-link" href="#" data-toggle="dropdown" title="Outils">
+            <i class="mdi mdi-tools"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Supervision</a>
+            <a class="dropdown-item" href="#">Analyses</a>
+        </div>
+    </li>
+
+    {# Notifications #}
+    <li class="nav-item dropdown">
+        <a class="nav-link count-indicator" href="#" data-toggle="dropdown">
+            <i class="mdi mdi-bell-outline"></i>
+            <span class="count count-bg-danger">3</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list">
+            <h6 class="p-3 mb-0">Notifications</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                    <div class="preview-icon bg-warning">
+                        <i class="mdi mdi-alert"></i>
+                    </div>
+                </div>
+                <div class="preview-item-content">
+                    <h6 class="preview-subject mb-1">Nouvelle alerte</h6>
+                    <p class="text-muted mb-0">Il y a 5 minutes</p>
+                </div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                    <div class="preview-icon bg-info">
+                        <i class="mdi mdi-information"></i>
+                    </div>
+                </div>
+                <div class="preview-item-content">
+                    <h6 class="preview-subject mb-1">Mise à jour système</h6>
+                    <p class="text-muted mb-0">Il y a 1 heure</p>
+                </div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <p class="p-3 mb-0 text-center">
+                <a href="#">Voir toutes les notifications</a>
+            </p>
+        </div>
+    </li>
+
+    {# Profil utilisateur #}
+    <li class="nav-item nav-profile dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+            <div class="nav-profile-img">
+                <img src="{{ app.user ? (app.user.avatar ?? '/assets/images/default-avatar.png') : '/assets/images/default-avatar.png' }}" 
+                     alt="user">
+            </div>
+            <div class="nav-profile-text">
+                <p class="mb-1 text-white">
+                    {{ app.user ? app.user.userIdentifier : 'Invité' }}
+                </p>
+            </div>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown">
+            <a class="dropdown-item" href="#">
+                <i class="mdi mdi-account mr-2 text-success"></i> Mon profil
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <i class="mdi mdi-settings mr-2 text-primary"></i> Paramètres
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <i class="mdi mdi-logout mr-2 text-danger"></i> Déconnexion
+            </a>
+        </div>
+    </li>
+</ul>
+
+<style>
+/* Top Menu Styles */
+.navbar-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.navbar-nav-right .nav-item {
+    position: relative;
+}
+
+.navbar-nav-right .nav-link {
+    color: #fff;
+    font-size: 20px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.navbar-nav-right .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Badge de compteur */
+.count-indicator {
+    position: relative;
+}
+
+.count {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #fff;
+}
+
+.count-bg-danger {
+    background: #dc3545;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    margin-top: 8px;
+    min-width: 200px;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.dropdown-item:hover {
+    background: #f8f9fa;
+    padding-left: 25px;
+}
+
+/* Preview List (Notifications) */
+.preview-list {
+    min-width: 320px;
+}
+
+.preview-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.preview-item:hover {
+    background: #f8f9fa;
+}
+
+.preview-thumbnail {
+    margin-right: 15px;
+}
+
+.preview-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+.preview-icon.bg-warning {
+    background: #ffc107;
+}
+
+.preview-icon.bg-info {
+    background: #17a2b8;
+}
+
+.preview-item-content {
+    flex: 1;
+}
+
+.preview-subject {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Profil utilisateur */
+.nav-profile {
+    margin-left: 15px;
+}
+
+.nav-profile-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.nav-profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-profile-text {
+    display: inline-block;
+}
+
+.nav-profile-text p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .navbar-nav-right {
+        gap: 2px;
+    }
+    
+    .navbar-nav-right .nav-link {
+        padding: 8px;
+        font-size: 18px;
+    }
+    
+    .nav-profile-text {
+        display: none;
+    }
+}
+</style>

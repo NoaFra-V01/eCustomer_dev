@@ -1,0 +1,13 @@
+# config/routes.yaml
+
+# 1. Chargement des contrôleurs (C'est ce bloc que vous aviez en double)
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+# 2. Routes pour Bazinga JsTranslation
+_bazinga_jstranslation:
+    resource: '@BazingaJsTranslationBundle/Resources/config/routing/routing.yml'
+    prefix:   /js/translations
