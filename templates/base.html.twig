@@ -6,152 +6,32 @@
     <title>{% block title %}{{ app_title ?? 'Pronic Intranet' }}{% endblock %}</title>
 
     {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('build/global.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/navbar.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/top-menu.css') }}">
         {{ encore_entry_link_tags('app') }}
-        <style>
-            /* Navbar Styles */
-            .navbar {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                padding: 0;
-                height: 70px;
-                z-index: 999;
-            }
-
-            .navbar-brand-wrapper {
-                width: 250px;
-                background: rgba(0, 0, 0, 0.1);
-                height: 70px;
-                display: flex;
-                align-items: center;
-                padding: 0 20px;
-            }
-
-            .navbar-brand-inner-wrapper {
-                width: 100%;
-            }
-
-            .brand-logo img {
-                max-height: 40px;
-            }
-
-            .brand-logo-mini {
-                display: none;
-            }
-
-            .navbar-toggler {
-                color: #fff;
-                border: none;
-                background: transparent;
-                font-size: 24px;
-                padding: 5px 10px;
-            }
-
-            .navbar-toggler:focus {
-                outline: none;
-            }
-
-            .navbar-menu-wrapper {
-                padding: 0 20px;
-                height: 70px;
-            }
-
-            /* Ajustement pour le contenu avec navbar fixed */
-            .page-body-wrapper {
-                padding-top: 70px;
-            }
-
-            @media (max-width: 991px) {
-                .navbar-brand-wrapper {
-                    width: 70px;
-                }
-
-                .brand-logo {
-                    display: none;
-                }
-
-                .brand-logo-mini {
-                    display: block;
-                }
-
-                .brand-logo-mini img {
-                    max-height: 30px;
-                }
-            }
-        </style>
     {% endblock %}
 
     <link rel="shortcut icon" href="{{ app_logo_favicon ?? '/favicon.ico' }}" />
-    
-    {# Theme utilisateur (seulement si connecté) #}
-    {% if app.user is not null and app.user.theme is defined and app.user.theme != 'null' %}
-        <link rel="stylesheet" href="{{ asset('assets/overload/gj-majestic-' ~ app.user.theme ~ '.overload.css') }}">
-    {% endif %}
 </head>
 
 <body class="{{ sidebar ?? '' }}">
     <div class="container-scroller">
-        {# Navbar principale #}
-        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-            <div class="navbar-brand-wrapper d-flex justify-content-center">
-                <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-                    <a class="navbar-brand brand-logo" href="{{ path('homepage') }}">
-                        <img src="{{ app_logo ?? '/assets/images/logo.png' }}" alt="logo"/>
-                    </a>
-                    <a class="navbar-brand brand-logo-mini" href="{{ path('homepage') }}">
-                        <img src="{{ app_logo_mini ?? '/assets/images/logo-mini.png' }}" alt="logo"/>
-                    </a>
-                    <button class="navbar-toggler navbar-toggler align-self-center" type="button">
-                        <span class="mdi mdi-sort-variant"></span>
-                    </button>
-                </div>  
-            </div>
-
-            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between w-100">
-                {# Barre de recherche - on l'ajoutera après #}
-                
-                {# Menu principal supérieur #}
-                {% include 'partials/top-menu.html.twig' %}
-                
-                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button">
-                    <span class="mdi mdi-menu"></span>
-                </button>
-            </div>
-        </nav>
+        {% include 'partials/navbar.html.twig' %}
         
         <div class="container-fluid page-body-wrapper">
-            {# Sidebar - on l'intégrera plus tard #}
-
             <div class="main-panel">
                 <div class="content-wrapper">
-                    {# Contenu principal #}
                     {% block body %}{% endblock %}
                 </div>
 
-                {# Footer #}
-                <footer class="footer">
-                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
-                            Copyright © {{ 'now'|date('Y') }}. Pronic - All rights reserved.
-                        </span>
-                    </div>
-                </footer>
+                {% include 'partials/footer.html.twig' %}
             </div>
         </div>
     </div>
 
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
-        
-        {# JavaScript à réactiver plus tard quand les routes existeront
-        <script>
-            const APP_CONFIG = {
-                locale: '{{ app.request.locale|split('_')[0] }}',
-                routes: {
-                    search: '{{ url('Search_index') }}',
-                    news: '{{ url('dashboard_news') }}'
-                }
-            };
-        </script>
-        #}
     {% endblock %}
 </body>
 </html>

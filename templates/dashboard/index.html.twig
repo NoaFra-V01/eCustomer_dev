@@ -4,12 +4,11 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('styles/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/dashboard.css') }}">
 {% endblock %}
 
 {% block body %}
 <div class="dashboard-wrapper">
-    {# Ligne du haut : ACTUALITÉS + NEWS #}
     <div class="dashboard-row">
         {# ACTUALITÉS (2/3 largeur) #}
         <div class="dashboard-widget widget-actualites">
@@ -32,7 +31,6 @@
         </div>
     </div>
 
-    {# Ligne du milieu : MÉTÉO + AIR RHÔNE-ALPES #}
     <div class="dashboard-row">
         {# MÉTÉO (2/3 largeur) #}
         <div class="dashboard-widget widget-meteo">
@@ -56,7 +54,6 @@
         </div>
     </div>
 
-    {# Ligne du bas : PRONIC TIME (pleine largeur) #}
     <div class="dashboard-row">
         <div class="dashboard-widget widget-time">
             <div class="widget-header">PRONIC TIME</div>

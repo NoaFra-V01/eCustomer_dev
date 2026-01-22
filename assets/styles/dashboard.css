@@ -1,23 +1,21 @@
-/* Dashboard Wrapper */
 .dashboard-wrapper {
     padding: 0;
     margin: 0;
     width: 100%;
 }
 
-/* Lignes du dashboard */
 .dashboard-row {
     display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 0;
+    margin: 0;
 }
 
-/* Widgets de base */
 .dashboard-widget {
     background: #fff;
     border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: none;
+    border: 1px solid #e0e0e0;
 }
 
 .widget-header {
@@ -33,7 +31,6 @@
     background: #fff;
 }
 
-/* ACTUALITÉS (gris clair) */
 .widget-actualites {
     flex: 2;
 }
@@ -52,7 +49,6 @@
     margin-bottom: 15px;
 }
 
-/* NEWS (gris clair) */
 .widget-news {
     flex: 1;
 }
@@ -62,7 +58,6 @@
     color: #333;
 }
 
-/* MÉTÉO (gris foncé) */
 .widget-meteo {
     flex: 2;
 }
@@ -76,7 +71,6 @@
     min-height: 150px;
 }
 
-/* AIR RHÔNE-ALPES (gris foncé) */
 .widget-air {
     flex: 1;
 }
@@ -109,7 +103,6 @@
     border-radius: 3px;
 }
 
-/* PRONIC TIME (gris très foncé) */
 .widget-time {
     flex: 1;
 }
@@ -153,7 +146,6 @@
     color: #fff;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .dashboard-row {
         flex-direction: column;
