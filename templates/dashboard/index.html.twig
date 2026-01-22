@@ -5,12 +5,12 @@
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('assets/css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/meteo.css') }}">
 {% endblock %}
 
 {% block body %}
 <div class="dashboard-wrapper">
     <div class="dashboard-row">
-        {# ACTUALITÉS (2/3 largeur) #}
         <div class="dashboard-widget widget-actualites">
             <div class="widget-header">ACTUALITÉS</div>
             <div class="widget-content">
@@ -22,7 +22,6 @@
             </div>
         </div>
 
-        {# NEWS (1/3 largeur) #}
         <div class="dashboard-widget widget-news">
             <div class="widget-header">NEWS</div>
             <div class="widget-content">
@@ -32,26 +31,17 @@
     </div>
 
     <div class="dashboard-row">
-        {# MÉTÉO (2/3 largeur) #}
-        <div class="dashboard-widget widget-meteo">
-            <div class="widget-header">MÉTÉO</div>
-            <div class="widget-content">
-                <div class="meteo-display">
-                    <p>Informations météo à venir...</p>
-                </div>
-            </div>
-        </div>
-
-        {# AIR RHÔNE-ALPES (1/3 largeur) #}
         <div class="dashboard-widget widget-air">
             <div class="widget-header">AIR RHÔNE-ALPES</div>
             <div class="widget-content">
                 <p class="air-title">Indice de la qualité de l'air à Marignier</p>
-                <div class="air-gauge">
-                    {# Barre de qualité air à implémenter #}
-                </div>
+                <div class="air-gauge"></div>
             </div>
         </div>
+    </div>
+
+    <div class="dashboard-row">
+        {% include 'partials/meteo.html.twig' %}
     </div>
 
     <div class="dashboard-row">

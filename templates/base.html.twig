@@ -8,7 +8,7 @@
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('assets/css/global.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/top-menu.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/sidebar.css') }}">
     {% endblock %}
 
     <link rel="shortcut icon" href="{{ app_logo_favicon ?? '/favicon.ico' }}" />
@@ -19,6 +19,8 @@
         {% include 'partials/navbar.html.twig' %}
         
         <div class="container-fluid page-body-wrapper">
+            {% include 'partials/sidebar.html.twig' %}
+            
             <div class="main-panel">
                 <div class="content-wrapper">
                     {% block body %}{% endblock %}
@@ -30,6 +32,7 @@
     </div>
 
     {% block javascripts %}
+        <script src="{{ asset('assets/js/sidebar.js') }}"></script>
     {% endblock %}
 </body>
 </html>
