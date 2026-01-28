@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.container,
+.container-fluid,
+.container-scroller,
+.page-body-wrapper,
+.main-panel,
+.content-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+[class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.page-body-wrapper {
+    padding-top: 70px !important;
+    display: flex;
+}
+
+.main-panel {
+    width: 100%;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.card {
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+#app,
+.wrapper,
+.main-wrapper {
+    margin: 0;
+    padding: 0;
+}

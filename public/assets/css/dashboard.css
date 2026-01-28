@@ -1,0 +1,145 @@
+.dashboard-wrapper {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.dashboard-row {
+    display: flex;
+    gap: 0;
+    margin: 0;
+}
+
+.dashboard-widget {
+    background: #fff;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+    border: 1px solid #e0e0e0;
+}
+
+.widget-header {
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.widget-content {
+    padding: 20px;
+    background: #fff;
+}
+
+.widget-actualites {
+    flex: 2;
+}
+
+.widget-actualites .widget-header {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.actualites-content {
+    text-align: left;
+}
+
+.pronic-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+.widget-news {
+    flex: 1;
+}
+
+.widget-news .widget-header {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.widget-air {
+    flex: 1;
+}
+
+.widget-air .widget-header {
+    background: #5a5a5a;
+    color: #fff;
+}
+
+.air-title {
+    font-size: 13px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.widget-air .widget-content {
+    background: #5a5a5a;
+    color: #fff;
+}
+
+.air-gauge {
+    height: 40px;
+    background: linear-gradient(to right, 
+        #00ff00 0%, 
+        #80ff00 20%, 
+        #ffff00 40%, 
+        #ff8000 60%, 
+        #ff0000 80%, 
+        #800000 100%);
+    border-radius: 3px;
+}
+
+.widget-time {
+    flex: 1;
+}
+
+.widget-time .widget-header {
+    background: #3a3a3a;
+    color: #fff;
+}
+
+.widget-time .widget-content {
+    background: #3a3a3a;
+    color: #fff;
+}
+
+.time-zones {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.time-zone {
+    text-align: center;
+}
+
+.flag-icon {
+    width: 40px;
+    height: 30px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.city {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.time {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .dashboard-row {
+        flex-direction: column;
+    }
+    
+    .time-zones {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

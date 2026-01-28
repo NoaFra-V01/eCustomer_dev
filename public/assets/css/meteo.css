@@ -1,0 +1,17 @@
+.widget-meteo {
+    flex: 1;
+}
+
+.widget-meteo .widget-header {
+    background: #3a3a3a;
+    color: #fff;
+}
+
+.widget-meteo .widget-content {
+    background: #3a3a3a;
+    color: #fff;
+}
+
+.meteo-display {
+    min-height: 100px;
+}
